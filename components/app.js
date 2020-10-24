@@ -1,6 +1,7 @@
 import { Component } from '../lib/react.js'
 import User from './user.js'
 import Wrapper from './wrapper.js'
+import UserStyled from './user-styled.js'
 
 class App extends Component {
     render() {
@@ -13,6 +14,10 @@ class App extends Component {
                         name: 'Nelson Acosta',
                         avatar: './images/nelson-acosta.jpg'
                     }).render()}
+                    ${new UserStyled({
+                        name: 'Nelson Acosta',
+                        avatar: './images/nelson-acosta.jpg'
+                      }).render()}
                     `
                 }).render()}
             </div>
