@@ -1,34 +1,19 @@
 import { Component, createElement } from '../lib/react/index.js'
-/* import User from './user.js'
+import User from './user.js'
 import Wrapper from './wrapper.js'
-import UserStyled from './user-styled.js' */
-
-const element = createElement('h1', {
-    class: 'title',
-}, 'Hola Mundo! desde create element')
-console.log(element)
+// import UserStyled from './user-styled.js'
 
 class App extends Component {
     render() {
-        return `
-            <div class="app">
-                <h1>Hola Mundo!</h1>                
-            </div>
-        `
+        return createElement('div', {
+                class: 'app',
+                children: new Wrapper({
+                    children: new User({
+                        name: 'Nelson Acosta',
+                    })
+                })
+            })
     }
 }
 
-/* ${new Wrapper({
-    children:`
-    <h1>React.js</h1>
-    ${new User({
-        name: 'Nelson Acosta',
-        avatar: './images/nelson-acosta.jpg'
-    }).render()}
-    ${new UserStyled({
-        name: 'Nelson Acosta',
-        avatar: './images/nelson-acosta.jpg'
-      }).render()}
-    `
-}).render()} */
 export default App
