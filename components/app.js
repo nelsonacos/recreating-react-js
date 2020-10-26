@@ -8,9 +8,11 @@ class App extends Component {
         return createElement('div', {
                 class: 'app',
                 children: new Wrapper({
-                    children: new User({
-                        name: 'Nelson Acosta',
-                    })
+                    children: [
+                        new User({
+                            name: 'Nelson Acosta',
+                        })
+                    ]
                 })
             })
     }
