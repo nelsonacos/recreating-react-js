@@ -11,6 +11,7 @@ class App extends Component {
                     children: [
                         new User({
                             name: 'Nelson Acosta',
+                            age: 10
                         })
                     ]
                 })
