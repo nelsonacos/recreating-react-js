@@ -1,5 +1,5 @@
 import styled from '../lib/styled-components.js'
-import { Component } from '../lib/react/src/React.js'
+import { Component, createElement } from '../lib/react/index.js'
 
 
 const UserStyled = styled.div`
@@ -30,13 +30,12 @@ const AvatarStyled = styled.div`
 class User extends Component {
     render() {
         const { name, avatar } = this.props
-        return `
-      ${UserStyled(`
-            ${AvatarStyled(`
-            `)}
-            <h2>${name}</h2>
-            `)}
-        `
+        return UserStyled({
+            children: [
+                AvatarStyled({}),
+                createElement('h2', null, name) 
+            ]
+        }, '')
     }
 }
 
