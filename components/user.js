@@ -1,6 +1,7 @@
 import { Component, createElement } from '../lib/react/index.js'
 
 class User extends Component {
+  displayName = 'User'
   state = {
     age: this.props.age
   }
@@ -8,6 +9,19 @@ class User extends Component {
     super(props)
     this.handleClick = this.handleClick.bind(this)
   }
+
+  componentWillMount(){
+    console.log('el componente se va a renderizar')
+  }
+
+  componentDidMount(){
+    console.log(`el componente ${this.displayName} se renderizo`)
+  }
+
+  componentDidUpdate(){
+    console.log('el componente se actualizo')
+  }
+
   handleClick(event) {
     this.setState({
       age: this.state.age + 1
